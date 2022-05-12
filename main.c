@@ -17,9 +17,11 @@ void gotoxy(int x, int y)
 int i;
 void box1();
 void main_box();
+void bill_menu();
+void medicine();
+void customer();
 void main_menu();
 void login();
-
 
 int main()
 {
@@ -50,6 +52,7 @@ void box1()
 		printf("%c", 186);
 	}
 }
+
 void main_box()
 {
 	gotoxy(55, 8);
@@ -205,10 +208,13 @@ void main_menu()
 		{
 
 		case 'C':
+			customer();
 			break;
 		case 'M':
+			medicine();
 			break;
 		case 'B':
+			bill_menu();
 			break;
 		case 'E':
 			gotoxy(62, 29);
@@ -242,5 +248,202 @@ void main_menu()
 			system("cls");
 		}
 	} while (ch != 'E');
-	getch();
+	// getch();
+}
+void customer()
+{
+	char ch;
+	system("cls");
+	do
+	{
+		main_box();
+		box1();
+		gotoxy(72, 5);
+		printf("---------------");
+		gotoxy(73, 6);
+		printf("Customer Menu");
+		gotoxy(72, 7);
+		printf("---------------");
+		gotoxy(68, 12);
+		printf("*");
+		gotoxy(69, 12);
+		printf("Add New Customer");
+		gotoxy(68, 15);
+		printf("*");
+		gotoxy(69, 15);
+		printf("Update Customer");
+		gotoxy(68, 18);
+		printf("*");
+		gotoxy(69, 18);
+		printf("Search Customer");
+		gotoxy(68, 21);
+		printf("*");
+		gotoxy(69, 21);
+		printf("List of Existing Customer");
+		gotoxy(68, 24);
+		printf("*");
+		gotoxy(69, 24);
+		printf("Main Menu");
+		gotoxy(59, 28);
+		printf("P");
+		gotoxy(60, 28);
+		printf("ress First Character for further Menu:  ");
+
+		ch = toupper(getche());
+		switch (ch)
+		{
+		case 'A':
+			// animation();
+			//  cust_entry();
+			break;
+		case 'U':
+			// animation();
+			//  cust_update();
+			break;
+		case 'L':
+			// animation();
+			//  cust_list();
+			break;
+		case 'S':
+			// cust_search();
+			break;
+		case 'M':
+			main_menu();
+			break;
+		default:
+			gotoxy(59, 30);
+			printf("P");
+			gotoxy(60, 30);
+			printf("lese Enter right character ONLY (A,U,L,S,M).");
+			Sleep(2000);
+			system("cls");
+		}
+	} while (ch != 'M');
+}
+void medicine()
+{
+	char ch;
+	system("cls");
+	do
+	{
+		main_box();
+		box1();
+		gotoxy(73, 5);
+		printf("---------------");
+		gotoxy(74, 6);
+		printf("Medicine Menu");
+		gotoxy(73, 7);
+		printf("---------------");
+		gotoxy(68, 12);
+		printf("*");
+		gotoxy(69, 12);
+		printf("Purchase New Medicine");
+		gotoxy(68, 15);
+		printf("*");
+		gotoxy(69, 15);
+		printf("Sale Medicine");
+		gotoxy(68, 18);
+		printf("*");
+		gotoxy(69, 18);
+		printf("Stock of Medicine");
+		gotoxy(68, 21);
+		printf("*");
+		gotoxy(69, 21);
+		printf("Search Medicine");
+		gotoxy(68, 24);
+		printf("*");
+		gotoxy(69, 24);
+		printf("Main Menu");
+		gotoxy(59, 28);
+		printf("P");
+		gotoxy(60, 28);
+		printf("ress First Character for further Menu:  ");
+
+		ch = toupper(getche());
+		switch (ch)
+		{
+		case 'P':
+			// medi_entry();
+			break;
+		case 'S':
+			// medi_sale();
+			break;
+		case 'C':
+			// stock();
+			break;
+		case 'A':
+			// medi_search();
+			break;
+		case 'M':
+			main_menu();
+			break;
+		default:
+			gotoxy(59, 30);
+			printf("P");
+			gotoxy(60, 30);
+			printf("lese Enter right character ONLY (P,S,C,A,M).");
+			Sleep(2000);
+			system("cls");
+		}
+	} while (ch != 'M');
+}
+void bill_menu()
+{
+	char ch;
+	system("cls");
+	do
+	{
+		main_box();
+		box1();
+		gotoxy(75, 5);
+		printf("-----------\n");
+		gotoxy(76, 6);
+		printf("Bill Menu\n ");
+		gotoxy(75, 7);
+		printf("-----------\n\n\n\n\n");
+		gotoxy(70, 14);
+		printf("*");
+		gotoxy(71, 14);
+		printf("Bill");
+		gotoxy(70, 17);
+		printf("*");
+		gotoxy(71, 17);
+		printf("Last Bill History");
+		gotoxy(70, 20);
+		printf("*");
+		gotoxy(71, 20);
+		printf("Search Bill");
+		gotoxy(70, 23);
+		printf("*");
+		gotoxy(71, 23);
+		printf("Main Menu");
+		gotoxy(59, 28);
+		printf("P");
+		gotoxy(60, 28);
+		printf("ress First Character for further Menu:  ");
+
+		ch = toupper(getche());
+		switch (ch)
+		{
+
+		case 'B':
+			break;
+		case 'L':
+			break;
+		case 'S':
+
+			break;
+		case 'M':
+			main_menu();
+			break;
+
+		default:
+			gotoxy(59, 30);
+			printf("P");
+			gotoxy(60, 30);
+			printf("lese Enter right character ONLY (B,L,S,M).");
+			Sleep(2000);
+			system("cls");
+		}
+	} while (ch != 'M');
 }
